@@ -1,6 +1,11 @@
-import java.awt.Frame;
+package owo.graphics;
+
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import owo.main.owo;
 
 public class renderer {
     
@@ -20,7 +25,13 @@ public class renderer {
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        
+        frame.addWindowListener(new WindowAdapter() {
+        	public void windowClosing (WindowEvent e) {
+        		owo.quit();
+        	};
+        });
         frame.setVisible(true);
-    };
+    }
 
 };
